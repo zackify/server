@@ -36,7 +36,7 @@ map <leader>s :CtrlP<cr>
 nnoremap <leader><leader> :wq<cr>
 nnoremap <leader>q :q!<cr>
 
-map <leader>g <C-ww><cr>
+nnoremap <Leader>m <C-w>p
 map <leader>g :go<CR>
 map <leader>w :w!<CR>
 
