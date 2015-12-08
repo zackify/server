@@ -13,6 +13,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'mxw/vim-jsx'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'moll/vim-node'
+Plugin 'embear/vim-localvimrc'
+
 call vundle#end()
 
 let mapleader="\<Space>"
@@ -34,12 +36,18 @@ let g:ctrlp_custom_ignore = '\v[\/]\node_modules$'
 let g:ctrlp_root_markers = ['node_modules']
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
-map <leader>s :CtrlP<cr>
+" Allow gf to work with PHP namespaced classes.
+set includeexpr=substitute(v:fname,'\\\','/','g')
+set suffixesadd+=.php
 
-nnoremap <leader><leader> :wq<cr>
-nnoremap <leader>q :q!<cr>
+"remaps
 
-nnoremap <Leader>m <C-w>p
+map <leader>s :CtrlP<cr> "find files
+
+nnoremap <leader>wq :wq<cr>
+nnoremap <leader>q :q<cr>
+
+nnoremap <Leader>h <C-w>p
 map <leader>g :go<CR>
 map <leader>w :w!<CR>
 
