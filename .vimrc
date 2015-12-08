@@ -18,6 +18,11 @@ call vundle#end()
 let mapleader=","
 
 
+"jkl; to move
+noremap l h
+noremap ; l
+noremap h ;
+
 " Search
 
 let g:ctrlp_map = '<c-p>'
@@ -29,7 +34,9 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 map <leader>s :CtrlP<cr>
 
 nnoremap <leader><leader> :wq<cr>
+nnoremap <leader>q :q!<cr>
 
+map <leader>g <C-ww><cr>
 map <leader>g :go<CR>
 map <leader>w :w!<CR>
 
