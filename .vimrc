@@ -41,8 +41,8 @@ set includeexpr=substitute(v:fname,'\\\','/','g')
 set suffixesadd+=.php
 
 "remaps
-
-map <leader>s :CtrlP<cr> "find files
+"find files
+map <leader>s :CtrlP<cr>
 
 nnoremap <leader>wq :wq<cr>
 nnoremap <leader>q :q<cr>
