@@ -13,24 +13,28 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'mxw/vim-jsx'
 Plugin 'ctrlpvim/ctrlp.vim'
 
-call vundle#end() 
+call vundle#end()
 
+let mapleader=","
 
 
 " Search
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_custom_ignore = '\v[\/]\node_modules$'
 let g:ctrlp_root_markers = ['node_modules']
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
+map <leader>s :CtrlP<cr>
 
-let mapleader=","
-map ,g :go<CR>
-map ,w :w!<CR>
+nnoremap <leader><leader> :wq<cr>
+
+map <leader>g :go<CR>
+map <leader>w :w!<CR>
 
 " NERDTree
-nmap n :NERDTreeToggle<CR>
+nmap <leader>n :NERDTreeToggle<CR>
 let NERDTreeHighlightCursorline=1
 let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
 
@@ -62,4 +66,3 @@ nnoremap B b
 nnoremap E e
 " highlight last inserted text
 nnoremap gV `[v`]
-let mapleader=","       " leader is comma
