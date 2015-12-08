@@ -12,16 +12,19 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mxw/vim-jsx'
 Plugin 'ctrlpvim/ctrlp.vim'
-
+Plugin 'moll/vim-node'
 call vundle#end()
 
-let mapleader=","
+let mapleader="\<Space>"
 
 
 "jkl; to move
 noremap l h
 noremap ; l
 noremap h ;
+
+"gf for same tab, ff for new tab (look at node.vim)
+nnoremap ff <c-w>f
 
 " Search
 
