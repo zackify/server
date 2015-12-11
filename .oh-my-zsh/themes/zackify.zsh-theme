@@ -1,9 +1,13 @@
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="blue"; fi
+if [ $UID -eq 0 ]; then PROMPTCOLOR="red"; else PROMPTCOLOR="green"; fi
+if [ $UID -eq 0 ]; then USERCOLOR="yellow"; else USERCOLOR="blue"; fi
 
 # -zach- ~/.oh-my-zsh ➤ echo hi
 #PROMPT='%{$fg[blue]%}-%{$reset_color%}%{$fg[red]%}%n%{$reset_color%}%{$fg[blue]%}- %{$reset_color%}%{$fg[yellow]%}%2~%{$reset_color%}%{$fg[$NCOLOR]%} ➤ %{$reset_color%}'
 
-PROMPT='%{$fg[blue]%}(%{$reset_color%}%{$fg[yellow]%}%n%{$reset_color%}%{$fg[green]%}.%{$reset_color%}%{$fg[red]%}%M%{$fg[blue]%})%{$reset_color%}%{$fg[yellow]%}%2~%{$reset_color%}%{$fg[$NCOLOR]%} ➤ %{$reset_color%}'
+#(zach) domain.io ~ ➤
+PROMPT='%{$fg[blue]%}(%{$reset_color%}%{$fg[$USERCOLOR]%}%n%{$reset_color%}%{$fg[blue]%}) %{$reset_color%}%{$fg[red]%}%M%{$fg[blue]%} %{$reset_color%}%{$fg[yellow]%}%2~%{$reset_color%}%{$fg[$NCOLOR]%} ➤ %{$fg[$PROMPTCOLOR]%}'
+
 RPROMPT='%{$fg[$NCOLOR]%}%p $(git_prompt_info)%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="git:"
